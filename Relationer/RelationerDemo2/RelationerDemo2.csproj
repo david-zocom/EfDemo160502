@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EAC11DD3-86DD-451F-97B3-B5FA4F88CE1B}</ProjectGuid>
+    <ProjectGuid>{16413031-1565-48C4-BBC2-0C59A4DCB9EB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Relationer</RootNamespace>
-    <AssemblyName>Relationer</AssemblyName>
+    <RootNamespace>RelationerDemo2</RootNamespace>
+    <AssemblyName>RelationerDemo2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,11 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\KontaktinfoModell.cs" />
-    <Compile Include="Models\LagModel.cs" />
-    <Compile Include="Models\MatchModel.cs" />
-    <Compile Include="Models\MedlemModel.cs" />
-    <Compile Include="Models\RelationContext.cs" />
+    <Compile Include="Models\CourseModel.cs" />
+    <Compile Include="Models\SchoolContext.cs" />
+    <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,7 +62,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
