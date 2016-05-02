@@ -17,6 +17,6 @@ namespace Relationer.Models
         //public SportTyp Sport { get; set; }
 
         // Ett lag kan ha flera medlemmar
-        public virtual IList<MedlemModel> Medlemmar { get; set; }
+        public virtual ICollection<MedlemModel> Medlemmar { get; set; }
     }
 }
