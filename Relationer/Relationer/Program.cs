@@ -15,8 +15,8 @@ namespace Relationer
             RelationContext context = new RelationContext();
             int count = context.Medlemmar.Count();
 
-            if (count == 0)
-                AddData(context);
+            /*if (count == 0)
+                AddData(context);*/
 
             Console.WriteLine("** Sportklubben **");
             if (context.Medlemmar.Count() > 0)
@@ -29,14 +29,21 @@ namespace Relationer
             {
                 Console.WriteLine("Följande lag finns:");
                 foreach (LagModel l in context.Lag)
-                    Console.WriteLine("\t" + l.Namn + ", " + l.Sport);
+                    Console.WriteLine("\t" + l.Namn);// + ", " + l.Sport);
             }
             if (context.Matcher.Count() > 0)
             {
                 Console.WriteLine("Följande matcher har spelats:");
                 foreach (MatchModel m in context.Matcher)
+                {
                     Console.WriteLine("\t" + m.Date.ToShortDateString()
                         + "\t" + m.Lag1.Namn + " mot " + m.Lag2.Namn);
+                    foreach (MedlemModel medlem in m.Spelare)
+                    {
+                        Console.WriteLine("\t\tSpelare: " + medlem.Namn
+                            +" för laget "+medlem.Lag.Namn);
+                    }
+                }
             }
 
             Console.Write("Program done, press any key to exit");
@@ -51,13 +58,13 @@ namespace Relationer
             LagModel lag1 = new LagModel()
             {
                 Namn = "Bara boll",
-                Sport = LagModel.SportTyp.Fotboll,
+                //Sport = LagModel.SportTyp.Fotboll,
                 Medlemmar = new List<MedlemModel>()
             };
             LagModel lag2 = new LagModel()
             {
                 Namn = "Rulla rakt",
-                Sport = LagModel.SportTyp.Biljard,
+                //Sport = LagModel.SportTyp.Biljard,
                 Medlemmar = new List<MedlemModel>()
             };
             MatchModel match1 = new MatchModel() { Date = new DateTime(2016, 4, 30) };
